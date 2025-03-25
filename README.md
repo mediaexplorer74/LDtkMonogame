@@ -1,4 +1,5 @@
-# LDtkMonogame 1.0-prealpha - main branch 
+# LDtkMonogame 1.0-prealpha 
+![Logo](Images/logo.png)
 
 My veeery quick (fast) and dirty "UWP-Remake" of LDtkMonogame project.
 
