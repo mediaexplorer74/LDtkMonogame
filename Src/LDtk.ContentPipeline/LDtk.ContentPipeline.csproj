@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9DF0023C-C75F-451F-9E2D-1448AD04794D}</ProjectGuid>
+    <ProjectGuid>{BEBED326-BBF5-4028-8CA7-0C89B8D37A33}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LDtkMonogame</RootNamespace>
-    <AssemblyName>LDtkMonogame</AssemblyName>
+    <RootNamespace>LDtk.ContentPipeline</RootNamespace>
+    <AssemblyName>LDtk.ContentPipeline</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
@@ -121,45 +121,35 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="ContentPipeline\LDtkFileReader.cs" />
-    <Compile Include="ContentPipeline\LDtkLevelReader.cs" />
-    <Compile Include="DefaultOverride.cs" />
-    <Compile Include="Field.cs" />
-    <Compile Include="Full\LDtkJsonFull.cs" />
-    <Compile Include="Full\LDtkJsonFull.Partial.cs" />
-    <Compile Include="Full\LDtkJsonFullSourceGenerator.cs" />
-    <Compile Include="ILDtkEntity.cs" />
-    <Compile Include="JsonPartials\LDtkFile.cs" />
-    <Compile Include="JsonPartials\LDtkIntGrid.cs" />
-    <Compile Include="JsonPartials\LDtkLevel.cs" />
-    <Compile Include="JsonPartials\LDtkWorld.cs" />
-    <Compile Include="JsonPartials\TilesetRectangle.cs" />
-    <Compile Include="LayerType.cs" />
-    <Compile Include="LDtkException.cs" />
-    <Compile Include="LDtkFieldParser.cs" />
-    <Compile Include="LDtkJson.cs" />
-    <Compile Include="LDtkJsonSourceGenerator.cs" />
-    <Compile Include="Parsers\ColorConverter.cs" />
-    <Compile Include="Parsers\GuidConverter.cs" />
-    <Compile Include="Parsers\PointConverter.cs" />
-    <Compile Include="Parsers\RectangleConverter.cs" />
-    <Compile Include="Parsers\Vector2Converter.cs" />
+    <Compile Include="ContentLogger.cs" />
+    <Compile Include="File\LDtkFileImporter.cs" />
+    <Compile Include="File\LDtkFileProcessor.cs" />
+    <Compile Include="File\LDtkFileWriter.cs" />
+    <Compile Include="Level\LDtkLevelImporter.cs" />
+    <Compile Include="Level\LDtkLevelProcessor.cs" />
+    <Compile Include="Level\LDtkLevelWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderer\ExampleRenderer.cs" />
-    <Compile Include="Renderer\RenderedLevel.cs" />
-    <EmbeddedResource Include="Properties\LDtkMonogame.rd.xml" />
+    <EmbeddedResource Include="Properties\LDtk.ContentPipeline.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.8</Version>
     </PackageReference>
-    <PackageReference Include="MonoGame.Framework.WindowsUniversal">
-      <Version>3.7.1.189</Version>
+    <PackageReference Include="MonoGame.Framework.Content.Pipeline">
+      <Version>3.8.0.1375-develop</Version>
+    </PackageReference>
+    <PackageReference Include="MonoGame.Framework.WindowsDX">
+      <Version>3.8.2.1105</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
       <Version>7.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LDtkMonogame\LDtkMonogame.csproj">
+      <Project>{9df0023c-c75f-451f-9e2d-1448ad04794d}</Project>
+      <Name>LDtkMonogame</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

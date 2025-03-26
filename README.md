@@ -1,6 +1,6 @@
 # LDtkMonogame 1.0-prealpha 
 <p align="center">
-<img src="Images/ldtklogo.png" height="128px"/>
+<img src="Images/logo.png" height="128px"/>
 </p>
 
 <p align="center">
